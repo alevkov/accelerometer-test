@@ -3,7 +3,6 @@
 #include <android/sensor.h>
 
 #include <cassert>
-#include <vector>
 
 typedef float** window_t;
 typedef float* xyz_t;
@@ -78,7 +77,6 @@ class SensorDriver {
 
         while(!done)
         {
-            std::vector<float> xyz;
             while (ASensorEventQueue_getEvents(accelerometerEventQueue, &event, 1) > 0)
             {
                 timespec t;
